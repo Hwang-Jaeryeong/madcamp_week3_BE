@@ -1,9 +1,8 @@
-# questions/serializers.py
-
+# serializers.py
 from rest_framework import serializers
-from .models import Questionnaire
+from .models import Person
 
-class QuestionnaireSerializer(serializers.ModelSerializer):
+class PersonSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Questionnaire
+        model = Person
         fields = '__all__'

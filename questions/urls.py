@@ -1,8 +1,8 @@
 # questions/urls.py
-
 from django.urls import path
-from .views import QuestionnaireCreateView
+from .views import PersonListCreateView, PersonDetailView
 
 urlpatterns = [
-    path('create-questionnaire/', QuestionnaireCreateView.as_view(), name='create-questionnaire'),
+    path('people/', PersonListCreateView.as_view(), name='person-list-create'),
+    path('people/<int:pk>/', PersonDetailView.as_view(), name='person-detail'),
 ]

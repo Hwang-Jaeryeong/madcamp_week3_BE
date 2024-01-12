@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 
     # My Apps
+    'accounts',
 
 ]
 
@@ -61,7 +62,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
-#AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 # JWT 설정

@@ -1,0 +1,54 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+
+    - name: create env file
+      run: |
+        touch .env
+        echo 'SECRET_KEY=2ld39#d-osb@s5*7cfmg2#ilvz(@!k5p$(zdo6+t1u%hzkzxt%
+        DEBUG=True
+        DATABASE_NAME=breakfirst
+        DATABASE_USERNAME=admin
+        DATABASE_PASSWORD=j20020607
+        DATABASE_HOST=database-1.c2vt7g52k0os.ap-northeast-2.rds.amazonaws.com
+        DATABASE_PORT=3306
+        DJANGO_ALLOWED_HOSTS=ec2-3-34-151-36.ap-northeast-2.compute.amazonaws.com' >> .env
+
+    - name: create remote directory
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ubuntu
+        key: ${{ secrets.KEY }}
+        script: mkdir -p /home/ubuntu/srv/ubuntu
+
+    - name: copy source via ssh key
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr --delete
+        remote_path: /home/ubuntu/srv/ubuntu/
+        remote_host: ${{ secrets.HOST }}
+        remote_user: ubuntu
+        remote_key: ${{ secrets.KEY }}
+
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ubuntu
+        key: ${{ secrets.KEY }}
+        script: |
+          sh /home/ubuntu/srv/ubuntu/config/scripts/deploy.sh
+

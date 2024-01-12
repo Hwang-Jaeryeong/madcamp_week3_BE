@@ -1,4 +1,4 @@
-# serializers.py
+# questions/serializers.py
 from rest_framework import serializers
 from .models import Person
 

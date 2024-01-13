@@ -2,6 +2,7 @@
 
 from django.db import models
 from django.conf import settings
+import uuid
 
 
 class Person(models.Model):

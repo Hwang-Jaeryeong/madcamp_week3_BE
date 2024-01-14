@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'accounts',
     'peoples',
     'letter',
+    'gallery',
 ]
 
 # Authentication backends

@@ -5,4 +5,4 @@ from .models import Letter
 class LetterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Letter
-        fields = ['id', 'author', 'content', 'is_public']
+        fields = ['id', 'receiver', 'content', 'is_public']

@@ -22,13 +22,13 @@ class LetterListCreateView(generics.ListCreateAPIView):
             return Letter.objects.filter(author=user)
 
     def perform_create(self, serializer):
-        user = self.request.user
+        author = self.request.data.get('author', '')
         receiver_name = self.request.data.get('receiver', '')
         receivers = Person.objects.filter(name=receiver_name)
 
         if receivers.exists():
             receiver = receivers.first()  # You can choose how to handle multiple receivers
-            serializer.save(author=user, receiver=receiver)
+            serializer.save(author=author, receiver=receiver)
         else:
             # Handle the case where the receiver doesn't exist
             pass
@@ -42,7 +42,7 @@ class LetterDetailView(generics.RetrieveUpdateDestroyAPIView):
         user = self.request.user
         return Letter.objects.filter(author=user)
 
-class LetterListViewByReceiver(ListAPIView):
+class LetterListViewByReceiver(generics.ListAPIView):
     serializer_class = LetterSerializer
     permission_classes = [permissions.IsAuthenticated]
 

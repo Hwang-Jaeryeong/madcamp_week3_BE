@@ -24,19 +24,21 @@ class PersonDetailView(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
-        # POST 요청으로 name과 이미지를 전달받아 해당하는 Person 객체 정보를 반환합니다.
-        name = self.request.data.get('name', None)
-        image = self.request.data.get('file', None)  # 'file' 키로부터 이미지를 가져옴
+        name = request.data.get('name', None)
+        image = request.data.get('file', None)  # 이미지 파일을 'file' 필드에서 가져옴
 
-        if name and image:
-            person = Person.objects.filter(name=name, user=request.user).first()
-            if person:
-                # 이미지 업로드 및 크기 조절 처리
-                person.picture_url = image
-                person.save()
+        if not name:
+            return Response({'error': 'Name is required.'}, status=status.HTTP_400_BAD_REQUEST)
 
-                serializer = self.get_serializer(person)
-                return Response(serializer.data, status=status.HTTP_200_OK)
+        person, created = Person.objects.get_or_create(name=name, user=request.user)
 
-        return Response({'error': 'Person not found or image not provided.'}, status=status.HTTP_404_NOT_FOUND)
+        if image:
+            person.picture_url = image
+            person.save()
+        else:
+            return Response({'error': 'Image file is required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        serializer = self.get_serializer(person)
+        return Response(serializer.data, status=status.HTTP_201_CREATED if created else status.HTTP_200_OK)
+
 

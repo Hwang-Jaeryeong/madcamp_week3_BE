@@ -62,6 +62,8 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 ACCOUNT_EMAIL_REQUIRED = True
+MEDIA_ROOT = '/home/app/web/media/'
+MEDIA_URL = '/media/'
 
 
 REST_FRAMEWORK = {

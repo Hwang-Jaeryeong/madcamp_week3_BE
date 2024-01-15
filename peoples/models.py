@@ -19,8 +19,11 @@ class Person(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         if self.picture_url:
-            img = Image.open(self.picture_url.path)
-            if img.height > 300 or img.width > 300:
-                output_size = (300, 300)
-                img.thumbnail(output_size)
-                img.save(self.picture_url.path)
+            self.save_picture_url()
+
+    def save_picture_url(self):
+        img = Image.open(self.picture_url.path)
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.picture_url.path)

@@ -27,7 +27,7 @@ class PersonDetailView(CreateAPIView):
 
     def create(self, request, *args, **kwargs):
         name = request.data.get('name', None)
-        image_file = request.FILES.get('file', None)  # 'file' 키로부터 이미지 파일을 가져옴
+        image_file = request.FILES.get('picture_url', None)  # 'file' 키로부터 이미지 파일을 가져옴
 
         if not name or not image_file:
             return Response({'error': 'Name and image file are required.'}, status=status.HTTP_400_BAD_REQUEST)

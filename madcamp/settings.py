@@ -33,6 +33,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'corsheaders',
 
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
     # DRF
     'rest_framework',
     'rest_framework.authtoken',
@@ -56,6 +60,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+ACCOUNT_EMAIL_REQUIRED = True
 
 
 REST_FRAMEWORK = {

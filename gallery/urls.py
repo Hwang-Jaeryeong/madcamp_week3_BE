@@ -4,6 +4,6 @@ from django.urls import path
 from .views import GalleryCreateView, GalleryListViewByReceiver
 
 urlpatterns = [
-    path('', GalleryCreateView.as_view(), name='gallery-create'),
-    path('list/', GalleryListViewByReceiver.as_view(), name='gallery-list-by-receiver'),
+    path('<int:receiver_id>/', GalleryCreateView.as_view(), name='gallery-create'),
+    path('list/<int:receiver_id>/', GalleryListViewByReceiver.as_view(), name='gallery-list-by-receiver'),
 ]

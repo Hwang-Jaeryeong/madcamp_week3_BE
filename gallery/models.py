@@ -1,5 +1,4 @@
 # gallery/models.py
-
 from django.db import models
 from peoples.models import Person
 from django.conf import settings
@@ -7,7 +6,7 @@ from PIL import Image
 
 class Gallery(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    receiver = models.CharField(max_length=255)
+    receiver = models.ForeignKey(Person, on_delete=models.CASCADE)
     picture = models.ImageField(upload_to='gallery_images/', null=True, blank=True)
     content = models.TextField(blank=True)
 
@@ -25,4 +24,3 @@ class Gallery(models.Model):
             output_size = (300, 300)
             img.thumbnail(output_size)
             img.save(self.picture.path)
-

@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     # My Apps
     'accounts',
     'peoples',
-    'letter',
+    'epistle',
     'gallery',
 ]
 

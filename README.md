@@ -1,4 +1,4 @@
-#### 2023 KAIST MadCamp Week1
+#### 2023 KAIST MadCamp Week3
 ###### 이화여자대학교 컴퓨터공학과 황재령, 성균관대학교 컬쳐앤테크놀로지융합전공 최지민
 # 반응형 Website
 ## *HAVEN*

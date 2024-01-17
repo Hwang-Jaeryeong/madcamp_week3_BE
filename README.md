@@ -2,11 +2,11 @@
 ###### 이화여자대학교 컴퓨터공학과 황재령, 성균관대학교 컬쳐앤테크놀로지융합전공 최지민
 # 반응형 Website
 ## *HAVEN*
-#### *H*olding memories close,<br>
-#### *A*ngels in our hearts,<br>
-#### *V*oices echoing in silence,<br>
-#### *E*ternal love unbroken,<br>
-#### *N*ever forgotten. <br>
+ **H**olding memories close,<br>
+ **A**ngels in our hearts,<br>
+ **V**oices echoing in silence,<br>
+ **E**ternal love unbroken,<br>
+ **N**ever forgotten. <br>
 납골당까지 가지 못해도, 개인적으로 세상을 떠난 주변 사람들과의 추억을 공유하고, 계속해서 기억할 수 있도록 만든 웹사이트
 
 ## 프로젝트 소개

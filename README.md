@@ -50,7 +50,8 @@
 ![readme_gallery(black)](https://github.com/Hwang-Jaeryeong/madcamp_week3_BE/assets/113423770/4a837c7f-8951-4521-a513-4565211ddec0)
 *검은화면 예시*
 ![readme_gallery(white)](https://github.com/Hwang-Jaeryeong/madcamp_week3_BE/assets/113423770/5b6fa390-bc73-4741-9b79-901617250975)
-*하얀색화면 예시*
+
+*밝은화면 예시*
 ![readme_galleryclick](https://github.com/Hwang-Jaeryeong/madcamp_week3_BE/assets/113423770/dafc73bf-899a-4259-853e-bcb569db9388)
 *해당 사진의 메모*
 

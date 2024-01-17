@@ -71,5 +71,8 @@
 함께 마지막 사진을 남겨보자 !<br>
 
 
+<img width="1201" alt="pho" src="https://github.com/Hwang-Jaeryeong/madcamp_week3_BE/assets/113423770/b0fa894c-60f7-4823-9a91-7a488c1bf2f4">
+<img width="1223" alt="pho2" src="https://github.com/Hwang-Jaeryeong/madcamp_week3_BE/assets/113423770/077a817e-037e-4b5d-b422-5f89de06051a">
+
 
 

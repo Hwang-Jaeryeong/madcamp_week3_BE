@@ -113,6 +113,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://172.10.7.14:80",
 ]
 
 ROOT_URLCONF = "madcamp.urls"
